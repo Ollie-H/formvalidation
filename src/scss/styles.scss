@@ -1,0 +1,73 @@
+.form{
+	
+}
+
+.form--narrow{
+	width: 300px;
+}
+
+.form__row{
+	display: block;
+
+		&.has-error{
+			.form__field{
+				border-color: red;
+			}
+		}
+}
+
+.form__field{
+    display: block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    outline: 0;
+    border: 1px solid #ccc;
+    color: #2099D8;
+	width: 100%;
+}
+
+.form__select{
+  
+	position: relative;
+
+	> select{
+	  	position: relative;
+	 	@extend .form__field;
+	    -webkit-appearance: none;
+		width: 100%;
+	}
+
+    &:after{
+        position: absolute;
+        margin: auto;
+        content: '';   
+        background: url(img/arrow-down.png) no-repeat center center;  
+        right: 10px;
+        top: 0;
+        bottom:0;
+        width: 15px;
+        height: 10px;
+    }
+
+}
+
+.form__field--inline{
+	display: inline;
+	width: 32.3%;
+}
+
+.form__label{
+	display: block;
+	margin-bottom: 10px;
+}
+
+.form__slider{
+    -webkit-appearance: none;
+    border-radius: 5px;
+    vertical-align: middle;
+    outline: 0;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+	width: 100%;
+}

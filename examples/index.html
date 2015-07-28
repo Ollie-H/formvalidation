@@ -1,0 +1,117 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Example form validation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="../dist/styles.min.css">
+        <style>
+          .container{
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+          }
+        </style>
+
+    </head>
+    <body>
+
+        <div class="container">
+
+          <h1>Form Validation</h1>
+
+          <form class="form form--narrow">
+                  
+              <div class="form__row js-required">
+                      
+                  <label class="form__label">First Name:<span class="error"></span></label>
+                  <input type="text" class="form__field js-field" />
+
+              </div>
+
+              <div class="form__row js-required">
+                      
+                  <label class="form__label">Last Name:<span class="error"></span></label>
+                  <input type="text" class="form__field js-field" />
+
+              </div>
+
+              <div class="form__row js-required">
+                  
+                  <label class="form__label">Email Address:<span class="error"></span></label>
+                  <input type="text" class="form__field js-field" data-type="test" />
+
+              </div>
+
+              <div class="form__row js-required">
+                  
+                  <label class="form__label">DOB:<span class="error"></span></label>
+                  <div class="js-field" data-type="date">
+                      <input type="text" class="form__field form__field--inline js-subfield" />
+                      <input type="text" class="form__field form__field--inline js-subfield" />
+                      <input type="text" class="form__field form__field--inline js-subfield" />
+                  </div>
+
+              </div>
+
+              <div class="form__row js-required">
+
+                  <label class="form__label">Drop Down:<span class="error"></span></label>
+                  <div class="form__select">
+                      <select class="js-field form__field">
+                          <option selected="selected" value=""></option>
+                          <option value="NO">No</option>
+                          <option value="YES">Yes</option>
+                      </select>
+                  </div>
+
+              </div>
+
+              <div class="form__row js-required">
+                  
+                  <label class="form__label">Email Address:<span class="error"></span></label>
+                  <input type="range" min="1" max="100" step="2" class="form__slider" />
+              </div>
+
+              <div class="form__row">
+                  
+                  <input type="submit" class="button" value="Submit" />
+
+              </div>
+
+          </form>
+
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script>window.jQuery || document.write('<script src="https://code.jquery.com/jquery-1.11.3.min.js"><\/script>')</script>
+        <script src="../dist/formvalidation.min.js"></script>
+        <script type="text/javascript">
+
+            (function($){
+
+              $('.form').on('submit', function(e){
+                new FormValidation(e, $(this), {
+                  success: function(){
+                    alert('success');
+                  },
+                  error: function(){
+                    alert('error');
+                  },
+                  test: function(){
+                    console.log(this);
+                  }
+                });
+              });
+
+            })(jQuery);
+
+        </script>
+
+    </body>
+</html>
